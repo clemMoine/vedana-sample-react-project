@@ -3,6 +3,7 @@
 // Libraries
 import { combineReducers } from "redux";
 import { persistReducer } from "redux-persist";
+import { reducer as formReducer } from "redux-form";
 
 // Sagas
 import rootSaga from "../Sagas";
@@ -19,7 +20,8 @@ import ReduxPersist from "./ReduxPersist";
 export default () => {
   /* ------------- Assemble The Reducers ------------- */
   let rootReducer = combineReducers({
-    startup: startupReducer
+    startup: startupReducer,
+    form: formReducer
   });
 
   /* ------------- Config persistant store ------------- */
